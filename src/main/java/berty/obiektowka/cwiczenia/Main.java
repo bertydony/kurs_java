@@ -1,0 +1,16 @@
+package berty.obiektowka.cwiczenia;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Snake cobra = new Snake();
+        Snake python = new Snake();
+
+        cobra.sounds();
+
+        cobra.setLength(20);
+        System.out.println(cobra.getLength());
+
+        cobra.isVenomous(false);
+    }
+}
