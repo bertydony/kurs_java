@@ -9,12 +9,6 @@ public class Snake extends Animals{
         System.out.println("Ssss");
     }
 
-    public boolean isVenomous(){
-        if(true) {
-            System.out.println("yes");
-        }else{
-            System.out.println("no");
-        }
 
     }
-}
+

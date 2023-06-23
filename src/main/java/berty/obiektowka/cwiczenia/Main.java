@@ -11,6 +11,8 @@ public class Main {
         cobra.setLength(20);
         System.out.println(cobra.getLength());
 
-        cobra.isVenomous(false);
+        System.out.println(cobra.czyJestDlugi());
+
+        System.out.println(cobra.getVenomous(true));
     }
 }
