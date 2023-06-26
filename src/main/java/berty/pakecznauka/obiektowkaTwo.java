@@ -1,4 +1,4 @@
-package berty;
+package berty.pakecznauka;
 
 public class obiektowkaTwo {
     private int age;

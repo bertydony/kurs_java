@@ -1,4 +1,4 @@
-package berty;
+package berty.pakecznauka;
 
 import java.util.AbstractList;
 import java.util.ArrayList;

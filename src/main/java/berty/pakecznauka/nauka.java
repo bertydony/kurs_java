@@ -1,4 +1,4 @@
-package berty;
+package berty.pakecznauka;
 
 public class nauka {
     public static void main (String[] args)

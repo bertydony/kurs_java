@@ -1,4 +1,4 @@
-package berty;
+package berty.pakecznauka;
 
 public class petle {
 
@@ -15,6 +15,11 @@ public class petle {
         tablica[1] = 888;
 
         for(int i : tablica){
+            System.out.println(i);
+        }
+
+        for(int i = 1; i<10; i++ ){
+            i++;
             System.out.println(i);
         }
 
