@@ -40,6 +40,7 @@ public class DataFromUser {
         }
     }
 
+
     private void zapiszDane(int wiersz, int kolumna, String xOrO) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("dane.txt"))) {
             writer.write("Wiersz: " + wiersz);
@@ -53,7 +54,7 @@ public class DataFromUser {
         }
     }
 
-    public boolean deleteData(String fileName) {
+    private boolean deleteData(String fileName) {
         try (FileWriter writer = new FileWriter(fileName)) {
             writer.write("");
             return true;

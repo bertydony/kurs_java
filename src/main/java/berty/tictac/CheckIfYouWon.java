@@ -11,7 +11,7 @@ public class CheckIfYouWon {
 
     public boolean isWon(String xOrO) {
         for (int wiersz = 0; wiersz < 3; wiersz++) {
-            if (board[wiersz][0].equals(xOrO) &&
+            if (board != null && xOrO.equals(board[wiersz][0]) &&
                     board[wiersz][1].equals(xOrO) &&
                     board[wiersz][2].equals(xOrO)) {
                 return true;
