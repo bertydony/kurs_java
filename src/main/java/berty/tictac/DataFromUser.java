@@ -26,7 +26,7 @@ public class DataFromUser {
         }
     }
 
-    public void zapiszDane(int wiersz, int kolumna, String xOrO) {
+    private void zapiszDane(int wiersz, int kolumna, String xOrO) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("dane.txt"))) {
             writer.write("Wiersz: " + wiersz);
             writer.newLine();
@@ -36,6 +36,16 @@ public class DataFromUser {
             System.out.println("Dane zostały zapisane do pliku: dane.txt");
         } catch (IOException e) {
             System.out.println("Wystąpił błąd podczas zapisu do pliku: " + e.getMessage());
+        }
+    }
+    String fileName = "dane.txt";
+    public boolean deleteData(String fileName ){
+        try(FileWriter writer = new FileWriter(fileName)){
+            writer.write("");
+            return true;
+        }catch (IOException e){
+            e.printStackTrace();
+            return false;
         }
     }
 }

@@ -6,6 +6,6 @@ public class GameMain {
 
         dataFromUser.data();
 
-
+       // dataFromUser.deleteData("dane.txt");
     }
 }
