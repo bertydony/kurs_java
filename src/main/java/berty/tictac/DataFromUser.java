@@ -7,10 +7,18 @@ import java.util.Scanner;
 
 public class DataFromUser {
 
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner;
+    private CheckIfYouWon checkIfYouWon;
+    private Field field;
+
+    public DataFromUser() {
+        scanner = new Scanner(System.in);
+        checkIfYouWon = new CheckIfYouWon();
+        field = new Field();
+    }
 
     public void data() {
-        System.out.println("Podaj wiersz, kolumne oraz znak jakim grasz( X or O)");
+        System.out.println("Podaj wiersz, kolumnę oraz znak, którym grasz (X or O)");
 
         int wiersz = scanner.nextInt();
         int kolumna = scanner.nextInt();
@@ -19,10 +27,16 @@ public class DataFromUser {
         if (xOrO.equalsIgnoreCase("X") || xOrO.equalsIgnoreCase("O")) {
             zapiszDane(wiersz, kolumna, xOrO);
             System.out.println("Twoje koordynaty to: ");
-            System.out.println("Wiersz: " + wiersz + "Kolumna: " + kolumna);
+            System.out.println("Wiersz: " + wiersz + " Kolumna: " + kolumna);
             System.out.println("Grasz: " + xOrO);
+
+            boolean gameWon = false;
+            while (!gameWon) {
+                field.displayField();
+                gameWon = checkIfYouWon.isWon(xOrO);
+            }
         } else {
-            System.out.println("Wpisz x lub o");
+            System.out.println("Wpisz X lub O");
         }
     }
 
@@ -38,12 +52,12 @@ public class DataFromUser {
             System.out.println("Wystąpił błąd podczas zapisu do pliku: " + e.getMessage());
         }
     }
-    String fileName = "dane.txt";
-    public boolean deleteData(String fileName ){
-        try(FileWriter writer = new FileWriter(fileName)){
+
+    public boolean deleteData(String fileName) {
+        try (FileWriter writer = new FileWriter(fileName)) {
             writer.write("");
             return true;
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
