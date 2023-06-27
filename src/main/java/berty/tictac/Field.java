@@ -12,6 +12,8 @@ public class Field {
         }
     }
 
+
+
     public void displayField() {
         System.out.println("-------------");
         for (int wiersz = 0; wiersz < 3; wiersz++) {
