@@ -8,6 +8,7 @@ public class Calc {
     double a, b, result;
     char operator;
     boolean loop = true;
+
     public void calculator() {
 
         while (loop) {
@@ -20,29 +21,29 @@ public class Calc {
 
             switch (operator) {
                 case '+':
-                    result=a+b;
-                    System.out.println("Wynik dodawania: "+result);
+                    result = a + b;
+                    System.out.println("Wynik dodawania: " + result);
                     break;
                 case '-':
                     result = a - b;
-                    System.out.println("Wynik odejmowania: "+result);
+                    System.out.println("Wynik odejmowania: " + result);
                     break;
                 case '*':
                     result = a * b;
-                    System.out.println("Wynik mnozenia: "+result);
+                    System.out.println("Wynik mnozenia: " + result);
                     break;
                 case '/':
                     result = a / b;
-                    System.out.println("Wynik dzielenia: "+result);
+                    System.out.println("Wynik dzielenia: " + result);
                     break;
                 default:
                     System.out.println("Podaj prawidłowy operator");
             }
             System.out.println("Lecimy dalej? T/N");
             String option = scanner.next();
-            if(option.equalsIgnoreCase("n")){
+            if (option.equalsIgnoreCase("n")) {
                 loop = false;
-            }else if(option.equalsIgnoreCase("t")){
+            } else if (option.equalsIgnoreCase("t")) {
                 System.out.println("Lecimy dalej");
             }
         }
