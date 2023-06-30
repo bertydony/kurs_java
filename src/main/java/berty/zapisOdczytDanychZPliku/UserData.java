@@ -10,6 +10,7 @@ public class UserData {
     Scanner scanner = new Scanner(System.in);
     Random random = new Random();
     private List<int[][]> tables = new ArrayList<>();
+
     public void data() throws IOException {
         boolean continueLoop = true;
 
@@ -34,8 +35,8 @@ public class UserData {
 
             System.out.println("Czy chcesz kontynuowac?(Tak/Nie)");
             String answer = scanner.next();
-            if(answer.equalsIgnoreCase("nie")){
-                continueLoop=false;
+            if (answer.equalsIgnoreCase("nie")) {
+                continueLoop = false;
             } else {
                 System.out.println(" ");
                 displayPreviousTables();
@@ -54,7 +55,8 @@ public class UserData {
         }
         System.out.println(" ");
     }
-    private void saveTableToFile(int[][] table) throws IOException{
+
+    private void saveTableToFile(int[][] table) throws IOException {
         File file = new File("table.txt");
         PrintWriter printWriter = new PrintWriter(file);
 
@@ -69,19 +71,20 @@ public class UserData {
         printWriter.close();
 
     }
-    private void displayPreviousTables(){
+
+    private void displayPreviousTables() {
         System.out.println("Poprzednie tabele: ");
-        for(int[][] table : tables){
+        for (int[][] table : tables) {
             displayTable(table);
         }
         System.out.println(" ");
     }
 
-    private void saveAllTablesToFile() throws IOException{
-        for(int i = 0; i < tables.size(); i++){
+    private void saveAllTablesToFile() throws IOException {
+        for (int i = 0; i < tables.size(); i++) {
             int[][] table = tables.get(i);
             saveTableToFile(table);
-            System.out.println("Tabela " + (i+1) + " zapisana do pliku");
+            System.out.println("Tabela " + (i + 1) + " zapisana do pliku");
         }
     }
 }
