@@ -8,8 +8,8 @@ public class CalculatorLogic {
     double a, b, result;
     char operator;
 
-
     boolean loop = true;
+
     public void doYouWantContinue() {
         System.out.println("Lecimy dalej? T/N");
         String option = scanner.next();
