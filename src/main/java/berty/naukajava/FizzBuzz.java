@@ -3,8 +3,7 @@ package berty.naukajava;
 public class FizzBuzz {
 
     public static void main(String[] args) {
-
-
+//CZESC Bartek
 
         for(int i = 1; i<= 100; i++){
             if(i%3==0 && i%5==0){
