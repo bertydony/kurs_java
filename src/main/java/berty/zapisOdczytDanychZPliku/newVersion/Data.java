@@ -33,9 +33,11 @@ public class Data {
             }
             System.out.println("Twoja tabelka:\nrows: " + rows + "\ncolumns: " + columns);
             displayTable(table);
-
             FileSave fileSave = new FileSave();
-            fileSave.saveFile(table);
+           // System.out.println("\n\nPoprzednie tabelki:");
+            fileSave.readFile(table);
+
+            table = fileSave.saveFile(table);
 
             System.out.println("\nChcesz kontynuowac? tak/nie");
             String answer = scanner.next();
