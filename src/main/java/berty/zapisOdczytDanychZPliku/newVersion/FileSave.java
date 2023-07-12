@@ -9,13 +9,15 @@ public class FileSave {
 
     public int[][] saveFile(int table[][]) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true));
+        String empty =" ";
         for (int i = 0; i < table.length; i++) {
-            System.out.print(" ");
+            writer.newLine();
             for (int j = 0; j < table[i].length; j++) {
-                writer.write(table[i][j] + " ");
-                writer.newLine();
+                writer.write(table[i][j]+"");
+                writer.write(empty);
             }
         }
+        writer.newLine();
         System.out.println("\nZapisano do pliku");
         writer.close();
         return table;
@@ -26,8 +28,9 @@ public class FileSave {
 
         String line;
         while ((line = reader.readLine()) != null) {
-            System.out.println("\n" + line);
+            System.out.println(line);
         }
+
         reader.close();
     }
 }

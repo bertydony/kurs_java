@@ -55,6 +55,7 @@ public class Data {
                 System.out.print(table[i][j] + " ");
             }
         }
+        System.out.println(" ");
     }
 
 }
