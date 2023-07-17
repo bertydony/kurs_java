@@ -2,6 +2,6 @@ package berty.calculator;
 
 public class Main {
     public static void main(String[] args) {
-        new CalculatorMode().calculator();
+        new CalculatorModel().calculator();
     }
 }
