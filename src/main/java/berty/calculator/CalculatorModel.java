@@ -9,7 +9,4 @@ public class CalculatorModel {
             logic.doYouWantContinue();
         }
     }
-
-
-
 }
