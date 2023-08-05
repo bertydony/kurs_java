@@ -3,9 +3,12 @@ package berty.statki;
 import java.util.Scanner;
 
 public class Ship {
-    Scanner scanner = new Scanner(System.in);
-    int[] shipPlace;
-    int hitsNumber=0;
+    private int[] shipPlace;
+    private int hitsNumber=0;
+
+    public void setShipPlace(int[] placement){
+        shipPlace = placement;
+    }
 
     public String check(int shoot){
         String result = "miss";
