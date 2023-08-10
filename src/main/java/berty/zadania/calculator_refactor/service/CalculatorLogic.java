@@ -1,26 +1,37 @@
-package berty.zadania.calculator_refactor;
+package berty.zadania.calculator_refactor.service;
+
+import berty.zadania.calculator_refactor.model.Calculator;
 
 import java.util.Scanner;
 
 public class CalculatorLogic {
+    private final Calculator calculator;
+    private final Scanner scanner = new Scanner(System.in);
 
-    Scanner scanner = new Scanner(System.in);
-    double a, b, result;
-    char operator;
+    public CalculatorLogic(Calculator calculator) {
+        this.calculator = calculator;
+    }
 
-    boolean loop = true;
-
-    public void doYouWantContinue() {
-        System.out.println("Lecimy dalej? T/N");
-        String option = scanner.next();
-        if (option.equalsIgnoreCase("n")) {
-            loop = false;
-        } else if (option.equalsIgnoreCase("t")) {
-            System.out.println("Lecimy dalej");
+    public void doCalculation() {
+        while (calculator.isOnOf()) {
+            getNumbers();
+            chooseOperatorAndPrintScore();
+            doYouWantContinue();
         }
     }
 
-    public void chooseOperatorAndPrintScore() {
+    private void doYouWantContinue() {
+        System.out.println("Lecimy dalej? T/N");
+        String option = scanner.next();
+        if (option.equalsIgnoreCase("n")) {
+            calculator.setOnOf(false);
+        } else if (option.equalsIgnoreCase("t")) {
+            System.out.println("Lecimy dalej");
+            calculator.setOnOf(true);
+        }
+    }
+
+    private void chooseOperatorAndPrintScore() {
         switch (operator) {
             case '+':
                 result = a + b;
@@ -43,12 +54,14 @@ public class CalculatorLogic {
         }
     }
 
-    public void getNumbers() {
+    private void getNumbers() {
         System.out.println("Podaj pierwsza liczbe");
-        a = scanner.nextDouble();
+        calculator.setNumberButton1(scanner.nextDouble());
         System.out.println("Podaj druga liczbe");
         b = scanner.nextDouble();
         System.out.println("Podaj operator");
         operator = scanner.next().charAt(0);
     }
+
+
 }
